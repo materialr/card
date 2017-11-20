@@ -1,8 +1,14 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const getClassName = className => classnames({
+  'mdc-card__supporting-text': true,
+  [className]: !!className,
+});
+
 const CardText = ({ className, text }) => (
-  <section className={`mdc-card__supporting-text ${className}`}>
+  <section className={getClassName(className)}>
     {text}
   </section>
 );
