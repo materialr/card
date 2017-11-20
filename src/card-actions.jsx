@@ -1,8 +1,14 @@
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const getClassName = className => classnames({
+  'mdc-card__actions': true,
+  [className]: !!className,
+});
+
 const CardActions = ({ actions, className }) => (
-  <section className={`mdc-card__actions ${className}`}>
+  <section className={getClassName(className)}>
     {actions.map(({ onClick, title }, index) => (
       <button
         className="mdc-button mdc-button--compact mdc-card__action"
