@@ -12,37 +12,37 @@ const getClassNames = className => classnames({
 
 const ActionIconToggle = ({
   className,
+  disabled,
   iconOff,
   iconOn,
   labelOff,
   labelOn,
   onChange,
-  rippleEnabled,
 }) => (
   <IconToggle
     className={getClassNames(className)}
+    disabled={disabled}
     iconOff={iconOff}
     iconOn={iconOn}
     labelOff={labelOff}
     labelOn={labelOn}
     onChange={onChange}
-    rippleEnabled={rippleEnabled}
   />
 );
 
 ActionIconToggle.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   iconOff: PropTypes.string.isRequired,
   iconOn: PropTypes.string.isRequired,
   labelOff: PropTypes.string.isRequired,
   labelOn: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  rippleEnabled: PropTypes.bool,
 };
 
 ActionIconToggle.defaultProps = {
   className: undefined,
-  rippleEnabled: false,
+  disabled: false,
 };
 
 export default ActionIconToggle;

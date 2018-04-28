@@ -2,25 +2,25 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const getClassNames = (className, isFullBleed) => classnames({
+const getClassNames = (className, fullBleed) => classnames({
   'mdc-card__actions': true,
-  'mdc-card__actions--full-bleed': isFullBleed,
+  'mdc-card__actions--full-bleed': fullBleed,
   [className]: !!className,
 });
 
-const Actions = ({ children, className, isFullBleed }) => (
-  <div className={getClassNames(className, isFullBleed)}>{children}</div>
+const Actions = ({ children, className, fullBleed }) => (
+  <div className={getClassNames(className, fullBleed)}>{children}</div>
 );
 
 Actions.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  isFullBleed: PropTypes.bool,
+  fullBleed: PropTypes.bool,
 };
 
 Actions.defaultProps = {
   className: undefined,
-  isFullBleed: false,
+  fullBleed: false,
 };
 
 export default Actions;

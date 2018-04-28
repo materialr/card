@@ -15,15 +15,13 @@ const ActionButton = ({
   className,
   disabled,
   onClick,
-  rippleCentered,
-  rippleEnabled,
+  ripple,
 }) => (
   <Button
     className={getClassNames(className)}
     disabled={disabled}
     onClick={onClick}
-    rippleCentered={rippleCentered}
-    rippleEnabled={rippleEnabled}
+    ripple={ripple}
   >
     {children}
   </Button>
@@ -34,16 +32,14 @@ ActionButton.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
-  rippleCentered: PropTypes.bool,
-  rippleEnabled: PropTypes.bool,
+  ripple: PropTypes.bool,
 };
 
 ActionButton.defaultProps = {
   className: undefined,
   disabled: false,
   onClick: undefined,
-  rippleCentered: false,
-  rippleEnabled: false,
+  ripple: false,
 };
 
 export default ActionButton;
