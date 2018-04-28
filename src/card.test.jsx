@@ -17,10 +17,10 @@ test('Card > Renders default className', () => {
 test('Card > Adds additional classNames', () => {
   const CLASS_NAME = 'CLASS_NAME';
   const wrapper = shallow(
-    <Card className={CLASS_NAME} isStroked>{CHILDREN}</Card>,
+    <Card className={CLASS_NAME} outlined>{CHILDREN}</Card>,
     { disableLifecycleMethods: true },
   );
-  const expected = `mdc-card mdc-card--stroked ${CLASS_NAME}`;
+  const expected = `mdc-card mdc-card--outlined ${CLASS_NAME}`;
 
   const actual = wrapper.props().className;
 

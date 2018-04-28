@@ -20,7 +20,7 @@ test('Actions > Renders default className', () => {
 test('Actions > Adds additional classNames', () => {
   const CLASS_NAME = 'CLASS_NAME';
   const wrapper = shallow(
-    <Actions className={CLASS_NAME} isFullBleed>{CHILDREN}</Actions>,
+    <Actions className={CLASS_NAME} fullBleed>{CHILDREN}</Actions>,
     { disableLifecycleMethods: true },
   );
   const expected = `mdc-card__actions mdc-card__actions--full-bleed ${CLASS_NAME}`;

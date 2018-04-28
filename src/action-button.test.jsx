@@ -33,14 +33,12 @@ test('ActionButton > Adds additional classNames', () => {
 test('ActionButton > Renders all props', () => {
   const DISABLED = true;
   const ON_CLICK = () => 'ON_CLICK';
-  const RIPPLE_CENTERED = true;
-  const RIPPLE_ENABLED = true;
+  const RIPPLE = true;
   const wrapper = shallow(
     <ActionButton
       disabled={DISABLED}
       onClick={ON_CLICK}
-      rippleCentered={RIPPLE_CENTERED}
-      rippleEnabled={RIPPLE_ENABLED}
+      ripple={RIPPLE}
     >
       {CHILDREN}
     </ActionButton>,
@@ -50,18 +48,15 @@ test('ActionButton > Renders all props', () => {
   const expectedChildren = CHILDREN;
   const expectedDisabled = DISABLED;
   const expectedOnClick = ON_CLICK;
-  const expectedRippleCentered = RIPPLE_CENTERED;
-  const expectedRippleEnabled = RIPPLE_ENABLED;
+  const expectedRipple = RIPPLE;
 
   const actualChildren = props.children;
   const actualDisabled = props.disabled;
   const actualOnClick = props.onClick;
-  const actualRippleCentered = props.rippleCentered;
-  const actualRippleEnabled = props.rippleEnabled;
+  const actualRipple = props.ripple;
 
   expect(actualChildren).toEqual(expectedChildren);
   expect(actualDisabled).toEqual(expectedDisabled);
   expect(actualOnClick).toEqual(expectedOnClick);
-  expect(actualRippleCentered).toEqual(expectedRippleCentered);
-  expect(actualRippleEnabled).toEqual(expectedRippleEnabled);
+  expect(actualRipple).toEqual(expectedRipple);
 });

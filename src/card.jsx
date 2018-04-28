@@ -4,26 +4,26 @@ import React from 'react';
 
 import '@material/card/mdc-card.scss';
 
-const getClassName = (className, isStroked) => classnames({
+const getClassName = (className, outlined) => classnames({
   'mdc-card': true,
-  'mdc-card--stroked': isStroked,
+  'mdc-card--outlined': outlined,
   [className]: !!className,
 });
 
-const Card = ({ children, className, isStroked }) => (
-  <div className={getClassName(className, isStroked)}>{children}</div>
+const Card = ({ children, className, outlined }) => (
+  <div className={getClassName(className, outlined)}>{children}</div>
 );
 
 Card.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  isStroked: PropTypes.bool,
+  outlined: PropTypes.bool,
 };
 
 Card.defaultProps = {
   children: undefined,
   className: '',
-  isStroked: false,
+  outlined: false,
 };
 
 export default Card;

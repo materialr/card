@@ -48,7 +48,7 @@ test('ActionIconToggle > Adds additional classNames', () => {
 });
 
 test('ActionIconToggle > Renders all props', () => {
-  const RIPPLE_ENABLED = true;
+  const DISABLED = true;
   const wrapper = shallow(
     <ActionIconToggle
       iconOff={ICON_OFF}
@@ -56,26 +56,26 @@ test('ActionIconToggle > Renders all props', () => {
       labelOff={LABEL_OFF}
       labelOn={LABEL_ON}
       onChange={ON_CHANGE}
-      rippleEnabled={RIPPLE_ENABLED}
+      disabled={DISABLED}
     />,
     { disableLifecycleMethods: true },
   );
   const props = wrapper.props();
+  const expectedDisabled = DISABLED;
   const expectedIconOff = ICON_OFF;
   const expectedIconOn = ICON_ON;
   const expectedLabelOff = LABEL_OFF;
   const expectedLabelOn = LABEL_ON;
-  const expectedRippleEnabled = RIPPLE_ENABLED;
 
+  const actualDisabled = props.disabled;
   const actualIconOff = props.iconOff;
   const actualIconOn = props.iconOn;
   const actualLabelOff = props.labelOff;
   const actualLabelOn = props.labelOn;
-  const actualRippleEnabled = props.rippleEnabled;
 
+  expect(actualDisabled).toEqual(expectedDisabled);
   expect(actualLabelOff).toEqual(expectedLabelOff);
   expect(actualLabelOn).toEqual(expectedLabelOn);
   expect(actualIconOff).toEqual(expectedIconOff);
   expect(actualIconOn).toEqual(expectedIconOn);
-  expect(actualRippleEnabled).toEqual(expectedRippleEnabled);
 });
