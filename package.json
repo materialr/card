@@ -29,8 +29,8 @@
   "homepage": "https://github.com/materialr/card#readme",
   "dependencies": {
     "@material/card": "^0.35.0",
-    "@materialr/button": "^2.0.0",
-    "@materialr/icon-toggle": "^2.0.0",
+    "@materialr/button": "^2.0.2",
+    "@materialr/icon-toggle": "^2.0.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2"
