@@ -65,3 +65,16 @@ test('Media > Renders children', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('Media > Adds extra props that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <Media data-qa={DATA_QA}>{CHILDREN}</Media>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

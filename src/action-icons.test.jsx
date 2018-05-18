@@ -41,3 +41,16 @@ test('ActionIcons > Renders children', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('ActionIcons > Adds extra properties that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <ActionIcons data-qa={DATA_QA}>{CHILDREN}</ActionIcons>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

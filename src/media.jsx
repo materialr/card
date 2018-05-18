@@ -12,8 +12,8 @@ const getClassNames = (aspectRatio, className) => classnames({
   [className]: !!className,
 });
 
-const Media = ({ aspectRatio, children, className }) => (
-  <div className={getClassNames(aspectRatio, className)}>{children}</div>
+const Media = ({ aspectRatio, children, className, ...props }) => (
+  <div className={getClassNames(aspectRatio, className)} {...props}>{children}</div>
 );
 
 Media.propTypes = {

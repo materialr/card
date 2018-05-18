@@ -7,8 +7,8 @@ const getClassNames = className => classnames({
   [className]: !!className,
 });
 
-const MediaContent = ({ children, className }) => (
-  <div className={getClassNames(className)}>{children}</div>
+const MediaContent = ({ children, className, ...props }) => (
+  <div className={getClassNames(className)} {...props}>{children}</div>
 );
 
 MediaContent.propTypes = {

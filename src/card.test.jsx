@@ -35,3 +35,16 @@ test('Card > Renders children', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('Card > Renders default className', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <Card data-qa={DATA_QA}>{CHILDREN}</Card>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

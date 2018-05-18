@@ -41,3 +41,16 @@ test('ActionButtons > Renders children', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('ActionButtons > Adds extra properties that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <ActionButtons data-qa={DATA_QA}>{CHILDREN}</ActionButtons>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toEqual(expected);
+});

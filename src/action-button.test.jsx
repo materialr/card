@@ -60,3 +60,16 @@ test('ActionButton > Renders all props', () => {
   expect(actualOnClick).toEqual(expectedOnClick);
   expect(actualRipple).toEqual(expectedRipple);
 });
+
+test('ActionButton > Adds extra properties that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <ActionButton data-qa={DATA_QA}>{CHILDREN}</ActionButton>,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});
