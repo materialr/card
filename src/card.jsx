@@ -10,8 +10,8 @@ const getClassName = (className, outlined) => classnames({
   [className]: !!className,
 });
 
-const Card = ({ children, className, outlined }) => (
-  <div className={getClassName(className, outlined)}>{children}</div>
+const Card = ({ children, className, outlined, ...props }) => (
+  <div className={getClassName(className, outlined)} {...props}>{children}</div>
 );
 
 Card.propTypes = {

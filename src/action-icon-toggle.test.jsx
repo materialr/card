@@ -79,3 +79,23 @@ test('ActionIconToggle > Renders all props', () => {
   expect(actualIconOff).toEqual(expectedIconOff);
   expect(actualIconOn).toEqual(expectedIconOn);
 });
+
+test('ActionIconToggle > Adds extra properties that are passed in', () => {
+  const DATA_QA = 'DATA_QA';
+  const wrapper = shallow(
+    <ActionIconToggle
+      data-qa={DATA_QA}
+      iconOff={ICON_OFF}
+      iconOn={ICON_ON}
+      labelOff={LABEL_OFF}
+      labelOn={LABEL_ON}
+      onChange={ON_CHANGE}
+    />,
+    { disableLifecycleMethods: true },
+  );
+  const expected = DATA_QA;
+
+  const actual = wrapper.props()['data-qa'];
+
+  expect(actual).toBe(expected);
+});

@@ -9,8 +9,16 @@ const getClassNames = className => classnames({
   [className]: !!className,
 });
 
-const ActionIcon = ({ className, icon, title }) => (
-  <i className={getClassNames(className)} role="button" tabIndex="0" title={title}>{icon}</i>
+const ActionIcon = ({ className, icon, title, ...props }) => (
+  <i
+    className={getClassNames(className)}
+    role="button"
+    tabIndex="0"
+    title={title}
+    {...props}
+  >
+    {icon}
+  </i>
 );
 
 ActionIcon.propTypes = {

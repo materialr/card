@@ -8,8 +8,8 @@ const getClassNames = (className, fullBleed) => classnames({
   [className]: !!className,
 });
 
-const Actions = ({ children, className, fullBleed }) => (
-  <div className={getClassNames(className, fullBleed)}>{children}</div>
+const Actions = ({ children, className, fullBleed, ...props }) => (
+  <div className={getClassNames(className, fullBleed)} {...props}>{children}</div>
 );
 
 Actions.propTypes = {

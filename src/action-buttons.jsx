@@ -7,8 +7,8 @@ const getClassNames = className => classnames({
   [className]: !!className,
 });
 
-const ActionButtons = ({ children, className }) => (
-  <div className={getClassNames(className)}>
+const ActionButtons = ({ children, className, ...props }) => (
+  <div className={getClassNames(className)} {...props}>
     {children}
   </div>
 );

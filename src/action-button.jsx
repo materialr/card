@@ -16,12 +16,14 @@ const ActionButton = ({
   disabled,
   onClick,
   ripple,
+  ...props
 }) => (
   <Button
     className={getClassNames(className)}
     disabled={disabled}
     onClick={onClick}
     ripple={ripple}
+    {...props}
   >
     {children}
   </Button>

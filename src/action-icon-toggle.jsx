@@ -18,6 +18,7 @@ const ActionIconToggle = ({
   labelOff,
   labelOn,
   onChange,
+  ...props
 }) => (
   <IconToggle
     className={getClassNames(className)}
@@ -27,6 +28,7 @@ const ActionIconToggle = ({
     labelOff={labelOff}
     labelOn={labelOn}
     onChange={onChange}
+    {...props}
   />
 );
 
